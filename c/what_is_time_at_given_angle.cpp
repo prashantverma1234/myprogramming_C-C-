@@ -1,0 +1,64 @@
+#include<stdio.h>
+main()
+{
+	int a,b,c,d,n,m,m1,n1,i,k,k1,n2;
+	printf("enter the degree b/w middle of hour and minute in a clock");
+	scanf("%d",&n);
+	printf("time is\n");
+	for(i=1;i<13;i++)
+	{
+		if(i==1)
+		i=2;
+		if(i==3)
+		i=5;
+		if(i==6)
+		i=7;
+		if(i==8)
+		{
+		i=11;
+		if(n==0)
+		i=12;
+	    }
+		k=i;
+		k=k*5;
+		n1=n/6;
+		n2=n1;
+		if(i==2)
+		{
+			n2=n2-1;
+			n1=n1+1;
+		}
+		if(i==5)
+		{
+			n2=n2-1-1;
+			n1=n1+1+1;
+		}
+		if(i==7)
+		{
+			n2=n2-3;
+			n1=n1+3;
+		}
+		if(i==11&&n!=0)
+		{ 
+		n2=n2-5;
+		n1=n1+3;
+			
+		}
+		if(i==12)
+		{
+		
+			n2=n2-2;
+			if(n==0)
+			n2=0;
+	    }
+		m=k+n1;
+		m1=k-n2;
+			if(m>59||m1>59)
+		{
+			m=m-60;
+			m1=m1-60;
+		}
+		printf("%d:%d\n",i,m);
+		printf("%d:%d\n",i,m1);
+	}
+}
